@@ -10,7 +10,9 @@
 		name: "Message",
 		data() {
 			return {
-				
+				//msg: '', // 消息
+				//msgType: '', // 消息类型
+				//msgShow: false // 是否显示消息，默认不显示
 			};
 		},
 		props: {
@@ -44,7 +46,16 @@
 				// $emit用于触发当前实例上的事件
 				// 可以触发一个事件来更新 show
                 this.$emit("update:show",false);
-			}
+			},
+			/* showMsg(msg, type = "warning") {
+				this.msg = msg;
+				this.msgType = type;
+				this.msgShow = false;
+				
+				this.$nextTick(() => {
+					this.msgShow = true;
+				})
+			} */
 		},
 	}
 </script>

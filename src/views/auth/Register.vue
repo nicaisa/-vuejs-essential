@@ -96,7 +96,7 @@
 					//从仓库获取用户信息
 					const localUser = this.$store.state.user;
 					
-					console.log("localUser",localUser,this.$store.state);
+					console.log("localUser",localUser,this.$store.state,user);
 					if (localUser) {
 						if (localUser.name === user.name) {
 							this.showMsg("用户名已存在");
