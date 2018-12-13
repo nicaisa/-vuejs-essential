@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<Message :show.sync="msgShow" :type="msgType" :msg="msg"/>home
+		<Message :show.sync="msgShow" :type="msgType" :msg="msg"/>
 		
 		<!-- 帖子列表 -->
 		<div class="col-md-9 topics-index main-col">
@@ -52,13 +52,21 @@
 				</div>
 			</div>
 		</div>
+	
+		<!-- 侧栏 -->
+		<TheSidebar/>
 	</div>
 </template>
 
 <script>
 	import { mapState } from "vuex"
+	import TheSidebar from '@/components/layouts/TheSidebar'
+	
 	export default {
 		name: 'Home',
+		components: {
+			TheSidebar
+		},
 		data() {
 			return {
 				msg: '', // 消息
@@ -74,7 +82,7 @@
 					{ filter: "noreply", name: "零回复", title: "无人问津的话题"},
 				],//过滤方式列表
 				total: 0, // 文章总数
-				pageSize: 5, // 每页条数
+				pageSize: 15, // 每页条数
 			};
 		},
 		// 组件内的路由导航守卫
