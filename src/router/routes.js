@@ -78,6 +78,14 @@ export default [
 		component:() => import("@/views/articles/Create"),
 		meta: { auth: true }
 	},
+	// Search
+	//我们需要将 /search 这类路由配置放到 /:user 的前面，以使其具有更高的优先级，因为 /:user 是动态的，
+	//它能够匹配到 /search 从而忽略其后面的配置。
+	{
+		path: "/search",
+		name: "Search",
+		component: () => import("@/views/Search"),
+	},
 	{
 		path: "/:user",
 		//name: "Column",
